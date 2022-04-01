@@ -54,10 +54,35 @@
 			"response": []
 		},
 		{
-			"name": "Update_Car",
+			"name": "Update_Product",
 			"request": {
 				"method": "PUT",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Ribeye\",\r\n    \"description\": \"deli/beef/\",\r\n    \"price\": 22.00,\r\n    \"inventory_quantity\": 10,\r\n    \"product_image\": \"https://embed.widencdn.net/img/beef/melpznnl7q/800x600px/Top%20Sirloin%20Steak.psd?keep=c&u=7fueml\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
