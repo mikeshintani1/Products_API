@@ -1,10 +1,10 @@
-from itertools import product
+
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Product
 from .serializers import ProductSerializer
-from migrations import serializers
+from . import serializers
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
@@ -23,12 +23,12 @@ def products_list(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def product_detail(request, pk):
-    car = get_object_or_404(Product, pk=pk)
+    product = get_object_or_404(Product, pk=pk)
     if request.method == 'GET':
-        serializer = ProductSerializer(car)
+        serializer = ProductSerializer(product)
         return Response(serializer.data)
     elif request.method == 'PUT':
-        serializer = ProductSerializer(car, data=request.data)
+        serializer = ProductSerializer(product, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
