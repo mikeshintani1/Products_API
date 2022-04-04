@@ -10,6 +10,7 @@ from .serializers import ReviewSerializer
 from . import serializers
 from django.shortcuts import get_object_or_404
 
+
 # Create your views here.
 @api_view(['GET', 'POST'])
 def review_list(request):
@@ -38,3 +39,4 @@ def review_detail(request, pk):
     elif request.method == 'DELETE':
         review.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
