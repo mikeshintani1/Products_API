@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'products',
     'review'
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -119,5 +120,6 @@ except ImportError:
 
 # The following is used to convert strings to decimal form on SQL/Postman
 REST_FRAMEWORK = {
-    'COERCE_DECIMAL_TO_STRING': False
+    'COERCE_DECIMAL_TO_STRING': False,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackEnd']
 }
