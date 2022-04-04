@@ -1,10 +1,10 @@
 from django.conf import UserSettingsHolder
 from django.db import models
-# from products.models import Product
-# from products.serializers import ProductSerializer
+from products.models import Product
+from products.serializers import ProductSerializer
 # from rest_framework import generics
-# from django.contrib.auth.models import User
-# from rest_framework import filters
+from django.contrib.auth.models import User
+from rest_framework import filters
 # from .serializers import ReviewSerializer
 
 
@@ -22,15 +22,15 @@ class Review(models.Model):
 #     search_fields = ['username', 'email']
 
 
-# # class ProductsList(generics.ListAPIView):
-#     serializer_class = ProductSerializer
+# class ProductsList(generics.ListAPIView):
+    serializer_class = ProductSerializer
 
-#     def get_queryset(self):
-#         queryset = Product.object.all()
-#         username = self.request.query_params.get('admin')
-#         if username is not None:
-#             queryset = queryset.filter(review_username=username)
-#             return queryset
+    def get_queryset(self):
+        queryset = Product.object.all()
+        username = self.request.query_params.get('admin')
+        if username is not None:
+            queryset = queryset.filter(review_username=username)
+            return queryset
 
 # class UserListView(generics.ListAPIView):
 #     queryset = User.objects.all()

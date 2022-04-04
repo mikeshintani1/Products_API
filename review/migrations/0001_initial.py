@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=255)),
                 ('price', models.DecimalField(decimal_places=2, max_digits=8)),
                 ('product_image', models.CharField(default='no image', max_length=255)),
-                # ('product_review', models.CharField(max_length=255)),
+                ('product_review', models.CharField(max_length=255)),
             ],
         ),
     ]
